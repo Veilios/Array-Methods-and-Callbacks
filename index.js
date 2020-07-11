@@ -11,15 +11,22 @@ console.log('its working');
 (c) Home Team goals for 2014 world cup final
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
+let wc14 = fifaData.filter((element) => {return element.Year === 2014});
+let finals14 = wc14.filter((element) => {return element.Stage === "Final"});
+// console.log(finals14);
 
+//a
+// console.log(finals14["Home Team Name"]);
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
-function getFinals(/* code here */) {
-
-    /* code here */
-
+function getFinals(element) {
+    let finals = [];
+    finals = element.filter((element) => {return element.Stage === "Final"});
+    return finals
 };
+
+console.log(getFinals(fifaData));
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
